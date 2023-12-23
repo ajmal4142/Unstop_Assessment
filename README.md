@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+## Unstop Assessment
+Description
+This project is a ReactJS application with Bootstrap styling that provides an interface for managing assessments. It includes features such as creating new assessments, viewing assessment details, and navigating through different sections.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Usage
+The application provides an interface with a sidebar for easy navigation between different sections such as Dashboard, Assessments, Library, and Round Status. The main section displays an overview of assessments and allows users to create new assessments.
 
-## Available Scripts
+### Components
+App Component
+# File: App.js
 
-In the project directory, you can run:
+The root component that defines the overall structure of the application. It includes routing for different sections using react-router-dom.
 
-### `npm start`
+MainSection Component
+# File: MainSection.js
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This component displays the main content of the application, including the overview of assessments, candidates, and candidate sources. It also allows users to search for assessments.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Header Component
+# File: Header.js
 
-### `npm test`
+The header component provides navigation options and a responsive menu for smaller screens. It includes links to different sections and a drawer for easy navigation.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+SideBar Component
+# File: SideBar.js
 
-### `npm run build`
+The sidebar component contains buttons for quick navigation to different sections of the application, such as Dashboard, Assessments, My Library, and Round Status.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+MyAssessment Component
+# File: MyAssessment.js
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This component manages the creation and display of assessments. It allows users to add new assessments with details such as name, purpose, description, skills, and duration. Assessments are stored in local storage for persistence.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Extras
+The project uses Bootstrap for styling.
+The application follows a responsive design, adapting to different screen sizes.
+Assessments are stored locally for persistence, and the user can create new assessments with various details.
+Feel free to explore the code in each component file for more specific details on their implementation.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
