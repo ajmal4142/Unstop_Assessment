@@ -5,12 +5,14 @@ import link from "./images/link.svg";
 import calendar_today from "./images/calendar_today.svg";
 import threedot from "./images/threedot.svg";
 import assessment from "./images/assessment.svg";
+import { Popover, Typography } from "@mui/material";
 
 const MyAssessment = () => {
   const [assessments, setAssessments] = useState([]);
   const [isModalOpen, setModalOpen] = useState(false);
 
   const [submissionDate, setSubmissionDate] = useState("");
+
   const [formData, setFormData] = useState({
     name: "",
     purpose: "",
@@ -20,6 +22,18 @@ const MyAssessment = () => {
     dates: "",
   });
   const [newSkill, setNewSkill] = useState("");
+  const [anchorEl, setAnchorEl] = useState(null);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const open = Boolean(anchorEl);
+  const id = open ? "simple-popover" : undefined;
   useEffect(() => {
     console.log(assessments);
   }, [assessments]);
@@ -90,6 +104,14 @@ const MyAssessment = () => {
       );
     }
   };
+
+  const handleDelete = (delete_obj) => {
+    const filterArray = assessments?.filter(
+      (obj) => delete_obj.name.toLowerCase() !== obj.name.toLowerCase(),
+    );
+    setAssessments(filterArray);
+    localStorage.setItem("assessments", JSON.stringify(filterArray));
+  };
   return (
     <div className="mx-4 my-4">
       <div className="container mt-3">
@@ -145,7 +167,25 @@ const MyAssessment = () => {
                   width="15px"
                   height="15px"
                   className="align-self-center ms-auto side_image"
+                  aria-describedby={id}
+                  variant="contained"
+                  onClick={handleClick}
                 />
+                <Popover
+                  id={id}
+                  open={open}
+                  anchorEl={anchorEl}
+                  onClose={handleClose}
+                  anchorOrigin={{
+                    vertical: "bottom",
+                    horizontal: "left",
+                  }}>
+                  <Typography
+                    sx={{ p: 2, cursor: "pointer" }}
+                    onClick={() => handleDelete(obj)}>
+                    Detele
+                  </Typography>
+                </Popover>
               </div>
               <div className="d-none d-md-flex flex-column mb-2 ">
                 <h6>{obj.name}</h6>
