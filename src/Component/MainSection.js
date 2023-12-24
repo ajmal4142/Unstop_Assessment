@@ -23,7 +23,7 @@ const MainSection = () => {
     const handleResize = () => {
       setShow(window.innerWidth > 769);
     };
-
+    handleResize();
     window.addEventListener("resize", handleResize);
 
     return () => {
